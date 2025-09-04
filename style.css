@@ -1,118 +1,133 @@
-/* Reset */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
+/*logo */
+.logo {
+    height: 120px;
+    width: auto;
+   /* filter: brightness(1.5) contrast(1.2);*/
+    /*box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8); */
 }
 
-header {
-    background-color: #1a1a1a;
-    padding: 20px;
+body,
+html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
     color: #fff;
+    background-color: #000000;
+    /* ← sólido, sin transparencia */
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-}
-
+/* Fondo con imagen */
 .hero {
-    background-color: #7ac74f;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 4px;
-    text-decoration: none;
-}
-
-section {
-    padding: 40px 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #1a1a1a;
-    color: #fff;
-}
-
-.contacto {
-    background-color: #e9fbe8;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.contacto h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #1a1a1a;
-}
-
-.contacto p {
-    margin-bottom: 20px;
-}
-
-.contacto-links {
+    background-image: url('https://th.bing.com/th/id/R.828a19f85303b0f9d121bc293e6a9a87?rik=CVTHMxDD77Gt2A&riu=http%3a%2f%2fwww.hotgyms.in%2fwp-content%2fuploads%2f2023%2f03%2fgym-1.png&ehk=8ASV2DOdicUnzMh79vgO%2fTZ0OqTcJbOgNp%2f3CBYS%2bRY%3d&risl=&pid=ImgRaw&r=0');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+    position: relative;
 }
 
-.btn-contacto {
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 5px;
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.59);
+    /* ← Esto oscurece correctamente la imagen de fondo */
+    z-index: 0;
+}
+
+/* Contenedor de texto */
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 8rem;
     font-weight: bold;
+    margin-bottom: 1rem;
     color: #fff;
-    transition: background-color 0.3s ease;
 }
 
-.btn-contacto.whatsapp {
-    background-color: #25d366;
+.hero-content ul {
+    list-style: none;
+    padding: 0;
 }
 
-.btn-contacto.instagram {
-    background-color: #cf2a2a;
+.hero-content ul li {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
 }
 
-.btn-contacto.mail {
-    background-color: #333;
+/* Enlaces de navegación */
+.hero-content ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.btn-contacto:hover {
-    opacity: 0.8;
+.hero-content ul li a:hover {
+    color: #00ff88;
+    /* Verde flúor al pasar el mouse */
 }
 
-.direccion {
-    font-style: italic;
-    color: #555;
+/* Secciones de abajo */
+section {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #010101;
 }
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #00ff88;
+}
+
+section p,
+section a {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #00ff88;
+}
+
+#contacto {
+    background-color: #121212;
+    padding: 4rem 2rem;
+    border-top: 2px solid #00ff88;
+    text-align: center;
+}
+
+#contacto h2 {
+    color: #00ff88;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#contacto p,
+#contacto a {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+#contacto a:hover {
+    color: #00ff88;
+}
+
+
+
